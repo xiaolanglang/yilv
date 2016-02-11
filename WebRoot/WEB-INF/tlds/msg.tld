@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd" version="2.0">
+	<description>自定义标签</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>msg</short-name>
+	<uri>http://tzj/message</uri>
+	<function>
+	    <description>获取字典对象列表</description>
+	    <name>getDictList</name>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
+	    <function-signature>java.util.List getDictList(java.lang.String)</function-signature>
+	    <example>${msg:getDictList(type)}</example>  
+  	</function>
+  	<function>
+	    <description>获取字典对象label</description>
+	    <name>getDictLabel</name>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
+	    <function-signature>java.util.List getDictLabel(java.lang.String,java.lang.String)</function-signature>
+	    <example>${msg:getDictLabel(value,type)}</example>  
+  	</function>
+  	<function>
+	    <description>获取字典对象label</description>
+	    <name>getDictLabels</name>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
+	    <function-signature>java.util.List getDictLabels(java.lang.String,java.lang.String)</function-signature>
+	    <example>${msg:getDictLabels(values,type)}</example>  
+  	</function>
+  	<function>
+	    <description>创建分业标签</description>
+	    <name>page</name>
+	    <function-class>com.bktravel.common.tld.Message</function-class>
+	    <function-signature>java.lang.String page(com.bkweb.common.utils.hibernatepage.HPage)</function-signature>
+	    <example>${msg:page(page)}</example>  
+  	</function>
+</taglib>
