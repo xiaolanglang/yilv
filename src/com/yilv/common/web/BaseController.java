@@ -17,10 +17,10 @@ public class BaseController {
 	@Autowired
 	protected Validator validator;
 
-	//注意两个名字可以不一样
+	// 注意两个名字可以不一样
 	@Value("${travelPath}")
-	protected String adminPath;
-	
+	protected String tpath;
+
 	/**
 	 * 日志对象
 	 */

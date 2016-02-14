@@ -74,11 +74,13 @@
 				return type(o);
 			},
 			type : function(o) {
-				return o == null ? String(o) : clazz[toString.call(o)] || "object";
+				return o == null ? String(o) : clazz[toString.call(o)]
+						|| "object";
 			},
 			initParam : function(a) {
 				var s = [], add = function(key, value) {
-					s[s.length] = encodeURIComponent(key) + "=" + encodeURIComponent(value);
+					s[s.length] = encodeURIComponent(key) + "="
+							+ encodeURIComponent(value);
 				};
 
 				// If an array was passed in, assume that it is an array of form
@@ -105,9 +107,10 @@
 		function basePath(type) {
 			var location = (window.location + '').split('/');
 			var basePath;
-			if(location[2]=="localhost:8080"){
-				basePath = location[0] + '//' + location[2] + '/' + location[3] + "/";
-			}else{
+			if (location[2].indexOf("8080") > 0) {
+				basePath = location[0] + '//' + location[2] + '/' + location[3]
+						+ "/";
+			} else {
 				basePath = location[0] + '//' + location[2] + '/';
 			}
 			if (!isEmpty(type)) {
@@ -198,10 +201,10 @@
 	w.lt = mj;
 })(window)
 
-$(function(){
-	try{
+$(function() {
+	try {
 		$("img.imglazy").lazyload();
-	}catch(e){
-		//捕捉异常，可能有某个页面没有加图片的延迟加载
+	} catch (e) {
+		// 捕捉异常，可能有某个页面没有加图片的延迟加载
 	}
 })
