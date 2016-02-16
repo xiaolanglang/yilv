@@ -1696,7 +1696,7 @@ a.a-bk:active {
 	-moz-user-select: none;
 	-webkit-user-select: none
 }
-input {
+input,textarea {
 	-moz-user-select: auto;
 	-webkit-user-select: auto
 }

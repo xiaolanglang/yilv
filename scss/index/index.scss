@@ -7,7 +7,6 @@
 	color: #4C96C7;
 	display: block;
 	float: left;
-	width: 50%;
 	height: 70px;
 	padding: 10px 0px 10px 0px;
 
@@ -19,6 +18,7 @@
 		height: 100%;
 		padding-left: 5px;
 		float: left;
+		font-size: 15px;
 
 		&:before {
 			content: '';
@@ -26,13 +26,16 @@
 			vertical-align: middle;
 			height: 100%;
 		}
+		time {
+			color: #B2B2B2;
+		}
 	}
 	.nickname span {
 		display: inline-block;
 		vertical-align: middle;
 	}
 }
-.content{
+.content {
 	margin-bottom: 20px;
 }
 .content2 {
@@ -76,12 +79,17 @@
 }
 .content4 {
 	color: #9C9C9C;
-	font-size: 15px;
 	height: 50px;
 	margin-top: 10px;
+
 	.icon {
-		font-size: 22px;
+		font-size: 20px;
 		padding-right: 3px;
 	}
-	a{padding-right: 20px;}
+	a {
+		padding-right: 20px;
+	}
+	.number {
+		margin-left: -2px;
+	}
 }

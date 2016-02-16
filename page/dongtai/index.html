@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" id="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../../js/common/jBox/jBox.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/index/index.css">
+	<link rel="stylesheet" type="text/css" href="../../css/write/index.css">
+</head>
+<body>
+	<div class="title row line-bottom">
+		<div class="col-2 text-center">
+			<a id="cancle" class="text">取消</a>
+		</div>
+		<div class="col-6 text-center">
+			<span class="text title-text">发动态</span>
+		</div>
+		<div class="col-2 text-center">
+			<a class="btn btn-default text" id="send">发送</a>
+		</div>
+	</div>
+	<div class="row">
+		<textarea class="row textarea" placeholder="秀秀新动态" id="content"></textarea>
+	</div>
+	<ul class="figure-list">
+		<li>
+			<div style="background-image:url('../../img/index/cache/1.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/2.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/3.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/4.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/5.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/6.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/7.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/8.png')">
+			</div>
+		</li>
+		<li>
+			<div style="background-image:url('../../img/index/cache/9.png')">
+			</div>
+		</li>
+	</ul>
+	<ul class="nav nav-li" style="display: none;" id="modal-content">
+		<li class="line-bottom"><a class="select-range" range="0"><span class="icon-earth icon"></span>公开</a></li>
+		<li class="line-bottom"><a class="select-range" range="1"><span class="icon-heart icon"></span>仅好友</a></li>
+		<li class="line-bottom"><a class="select-range" range="2"><span class="icon-lock icon"></span>仅自己</a></li>
+	</ul>
+	<a class="btn btn-default" id="range" range="0"><span class="icon-earth icon"></span>公开</a>
+</body>
+<script type="text/javascript" src="../../js/common/jquery_1.11.js"></script>
+<script type="text/javascript" src="../../js/common/jBox/jBox.min.js"></script>
+<script type="text/javascript" src="../../js/modules/write/index.js"></script>
+</html>
