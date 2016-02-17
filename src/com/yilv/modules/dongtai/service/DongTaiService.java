@@ -18,8 +18,11 @@ public class DongTaiService extends CDongTaiService {
 
 	public void save(Write write, HttpServletRequest request) {
 		File file = FileUploadUtils.upload(request, FileUploadUtils.getDefaultImgLocalUrl(), IdUtils.uuid());
-		String url = FileUploadUtils.getDefaultImgUrl(file.getName());// 获得请求路径
-		String localPath = file.getAbsolutePath();// 文件的绝对路径
+		String url = null, localPath = null;
+		if (file != null) {
+			url = FileUploadUtils.getDefaultImgUrl(file.getName());// 获得请求路径
+			localPath = file.getAbsolutePath();// 文件的绝对路径
+		}
 	}
 
 }
