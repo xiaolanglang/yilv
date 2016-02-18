@@ -1,5 +1,7 @@
 package com.yilv.sys.user.web;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +26,8 @@ public class LoginController extends BaseController {
 
 	@RequestMapping(value = "${travelPath}/loginsuccess")
 	@ResponseBody
-	public Object loginResult(Model model) {
-		return new Result(200, "success");
+	public Object loginResult(HttpServletRequest request) {
+		return new Result(200, request.getHeader("Cookie"));
 	}
 
 	@RequestMapping(value = "${travelPath}/login", method = RequestMethod.GET)
@@ -88,4 +90,5 @@ public class LoginController extends BaseController {
 
 		return new Result(500, "该用户已经存在");
 	}
+
 }

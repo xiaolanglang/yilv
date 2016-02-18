@@ -15,6 +15,7 @@
 				/static/** = anon
 				/file/** = anon
 				${travelPath}/login = authc
+				${travelPath}/loginsuccess = user
 				${travelPath}/logout = logout
 				${travelPath}/mine = anon
 				${travelPath}/mine/** = user
