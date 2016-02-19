@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yilv.base.common.utils.AccountUtils;
 import com.yilv.base.common.web.Result;
 import com.yilv.base.modules.dongtai.entity.DongTai;
 import com.yilv.common.web.BaseController;
@@ -27,6 +28,7 @@ public class DongTaiController extends BaseController {
 	@RequestMapping("save")
 	@ResponseBody
 	public Object save(DongTai dongTai, HttpServletRequest request) {
+		System.out.println(AccountUtils.getPrincipal());
 		dtService.save(dongTai, request);
 		return new Result(200, "发送成功");
 	}

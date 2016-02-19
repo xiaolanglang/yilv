@@ -2,11 +2,16 @@ $('textarea').autoHeight(70);
 
 function Method() {
 	var data = {};
+	data.images = [];
 	this.getData = function() {
 		return data;
 	}
-	this.setImgs = function(images) {
-		data.images = images;
+	this.setImgs = function(imageUrl) {
+		data.images.push(imageUrl);
+		return this;
+	}
+	this.clearImgs = function() {
+		data.images = [];
 		return this;
 	}
 	this.setPosition = function(position) {
@@ -21,6 +26,18 @@ function Method() {
 		data.range = range;
 		return this;
 	}
+	this.showImgs = function() {
+		var images = data.images;
+		if (images == null) {
+			return;
+		}
+		var content = "";
+		$.each(images, function(i, v) {
+			content += '<li><div style="background-image:url(\'' + v + '\')"></div></li>';
+		});
+		$(".figure-list").empty().append(content);
+		return this;
+	}
 }
 
 jsMethod = new Method();
@@ -30,27 +47,15 @@ $(function() {
 		var url = lt.getBasePath() + "dongtai/save";
 		var data = {};
 		jsMethod.setContent($("#content").val());
-		jsMethod.setRange($("#range").attr("range"))
+		jsMethod.setRange($("#range").attr("range"));
 		data = jsMethod.getData();
-		console.log(data);
-		var a=$.post(url, data, function(data) {
-			if (!lt.isEmpty(data.message)) {
-				new jBox("Notice", {
-					content : data.message,
-					position : {
-						x : "center",
-						y : "center"
-					},
-					autoClose : 2000
-				});
-			}
-		});
+		jsInterface.setParams(data.content, data.range);
 	});
 
 	new jBox('Modal', {
-		attach : $('#range'),
-		content : $("#modal-content"),
-		closeButton : "none"
+		attach: $('#range'),
+		content: $("#modal-content"),
+		closeButton: "none"
 	});
 
 	$(".select-range").click(function() {
