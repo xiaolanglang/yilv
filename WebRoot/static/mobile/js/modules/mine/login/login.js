@@ -10,7 +10,6 @@ $(function() {
 			autoClose : 2000
 		});
 	}
-	;
 
 	$("#form1").submit(function() {
 		var $submit = $("#submit");
@@ -19,6 +18,7 @@ $(function() {
 			success : function(data) {
 				if (data.code == 200) {
 					jsInterface.setMineRefresh();
+					jsInterface.setCookie(data.message);
 					window.opener = null;
 					window.open('', '_self');
 					window.close();
@@ -38,14 +38,7 @@ $(function() {
 	});
 
 	$("#dongtai").click(function() {
-		new jBox("Notice", {
-			content : "敬请期待",
-			position : {
-				x : "center",
-				y : "center"
-			},
-			autoClose : 2000
-		});
+		showMessage("敬请期待");
 	});
 
 	$("#add").click(function() {
@@ -70,14 +63,7 @@ $(function() {
 		// ------------用户名
 		if (username == null || username == "") {
 			$("#form2 #username").addClass("error");
-			new jBox("Notice", {
-				content : "用户名不能为空",
-				position : {
-					x : "center",
-					y : "center"
-				},
-				autoClose : 2000
-			});
+			showMessage("用户名不能为空");
 			return false;
 		} else {
 			$("#form2 #username").removeClass("error");
@@ -85,28 +71,14 @@ $(function() {
 		// ------------密码
 		if (password == "") {
 			$("#form2 #password").addClass("error");
-			new jBox("Notice", {
-				content : "输入密码",
-				position : {
-					x : "center",
-					y : "center"
-				},
-				autoClose : 2000
-			});
+			showMessage("输入密码");
 			return false;
 		} else {
 			$("#form2 #password").removeClass("error");
 		}
 		if (password != confirmpassword) {
 			$("#confirmpassword").addClass("error");
-			new jBox("Notice", {
-				content : "两次输入的密码不一样",
-				position : {
-					x : "center",
-					y : "center"
-				},
-				autoClose : 2000
-			});
+			showMessage("两次输入的密码不一样");
 			return false;
 		} else {
 			$("#confirmpassword").removeClass("error");
@@ -114,14 +86,7 @@ $(function() {
 		// ------------手机
 		if (!(/^1[3|4|5|7|8]\d{9}$/.test(phone))) {
 			$("#form2 #phone").addClass("error");
-			new jBox("Notice", {
-				content : "请输入正确的手机号码",
-				position : {
-					x : "center",
-					y : "center"
-				},
-				autoClose : 2000
-			});
+			showMessage("请输入正确的手机号码");
 			return false;
 		} else {
 			$("#form2 #phone").removeClass("error");
@@ -129,14 +94,7 @@ $(function() {
 		// ------------昵称
 		if (nickname == null || nickname == "") {
 			$("#form2 #nickname").addClass("error");
-			new jBox("Notice", {
-				content : "昵称不能为空",
-				position : {
-					x : "center",
-					y : "center"
-				},
-				autoClose : 2000
-			});
+			showMessage("昵称不能为空");
 			return false;
 		} else {
 			$("#form2 #nickname").removeClass("error");

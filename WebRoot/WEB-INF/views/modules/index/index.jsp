@@ -6,9 +6,10 @@
 <head>
 	<title>Love Travel</title>
 	<%@include file="/WEB-INF/views/include/header.jsp"%>
-	<link rel="stylesheet" type="text/css" href="<%=mCss%>/index/index.css">
+	<link rel="stylesheet" type="text/css" href="<%=mJs%>common/swiper/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="<%=mCss%>index/index.css">
 </head>
-<body style="background-color: #F2F2F2">
+<body style="background-color: #F2F2F2" class="swipe-body">
 	<div class="row line-top content">
 		<div class="content1 row">
 			<a class="user left">
@@ -223,7 +224,29 @@
 			</div>
 		</div>
 		<div class="line-top"></div>
+	</div>
+	
+	<!-- swiperView -->
+	<div class="center" id="swiperView">
+		<!-- Swiper -->
+	    <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/1.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/2.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/3.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/4.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/5.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/6.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/7.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/8.png')"></div>
+	            <div class="swiper-slide" style="background-image: url('<%=mImg%>index/cache/9.png')"></div>
+	        </div>
+	        <!-- Add Pagination -->
+	        <div class="swiper-pagination"></div>
+	    </div>
 	</div>
 </body>
 <%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=mJs%>common/swiper/swiper.min.js"></script>
+<script type="text/javascript" src="<%=mJs%>modules/dongtai/index.js"></script>
 </html>
