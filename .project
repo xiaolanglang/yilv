@@ -4,6 +4,7 @@
 	<comment></comment>
 	<projects>
 		<project>base-yi</project>
+		<project>InfrastructureProjects</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -182,6 +182,77 @@
 			<div class="line-top"></div>
 		</div>
 	</div>
+	
+	<div style="display: none" id="templete">
+		<div class="row line-top content">
+			<div class="content1 row">
+				<a class="user left">
+					<img src="{account.img}" class="img round">
+					<div class="nickname">
+						<span> <name>{account.nickname}</name> <br> <time>16-10-01&nbsp;12:12:10</time>
+						</span>
+					</div>
+				</a>
+			</div>
+			<div class="content2">
+				<p>{content}</p>
+			</div>
+			<div class="content3">
+				<ul class="figure-list">
+					<li>
+						<div data-original="{imageUrls[0]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[1]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[2]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[3]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[4]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[5]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[6]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[7]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+					<li>
+						<div data-original="{imageUrls[8]}"
+							style="background-image: url('<%=mImg%>common/lazy_img.png');" class="imglazy"></div>
+					</li>
+				</ul>
+			</div>
+			<div class="row content4 line-top">
+				<div class="left text-center">
+					<span class="text">15分钟之前</span>
+				</div>
+				<div class="text-center right">
+					<a href="javascript:void(0)">
+						<span class="text glyphicon glyphicon-thumbs-up icon"></span> <span class="text number">127</span>
+					</a>
+					<a href="<%=basePath%>dongtai/detail">
+						<span class="text icon-bubble2 icon"></span> <span class="text number">32</span>
+					</a>
+				</div>
+			</div>
+			<div class="line-top"></div>
+		</div>
+	</div>
 
 	<!-- swiperView -->
 	<div class="center" id="swiperView">

@@ -75,13 +75,11 @@
 				return type(o);
 			},
 			type : function(o) {
-				return o == null ? String(o) : clazz[toString.call(o)]
-						|| "object";
+				return o == null ? String(o) : clazz[toString.call(o)] || "object";
 			},
 			initParam : function(a) {
 				var s = [], add = function(key, value) {
-					s[s.length] = encodeURIComponent(key) + "="
-							+ encodeURIComponent(value);
+					s[s.length] = encodeURIComponent(key) + "=" + encodeURIComponent(value);
 				};
 
 				// If an array was passed in, assume that it is an array of form
@@ -109,8 +107,7 @@
 			var location = (window.location + '').split('/');
 			var basePath;
 			if (location[2].indexOf("8080") > 0) {
-				basePath = location[0] + '//' + location[2] + '/' + location[3]
-						+ "/";
+				basePath = location[0] + '//' + location[2] + '/' + location[3] + "/";
 			} else {
 				basePath = location[0] + '//' + location[2] + '/';
 			}
@@ -199,6 +196,7 @@
 			form.submit();
 		}
 	});
+
 	w.lt = mj;
 })(window)
 

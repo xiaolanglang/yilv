@@ -7,9 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.yilv.base.common.utils.hibernatepage.HPage;
+import com.yilv.base.common.utils.page.mbatis.MPage;
 import com.yilv.base.common.web.Result;
-import com.yilv.base.modules.account.entity.Account;
 import com.yilv.base.modules.dongtai.entity.DongTai;
 import com.yilv.base.modules.dongtai.response.DongtaiMsg;
 import com.yilv.common.web.BaseController;
@@ -41,9 +40,9 @@ public class DongTaiController extends BaseController {
 	@RequestMapping("list")
 	@ResponseBody
 	public Object list(Integer pageNum) {
-		HPage<DongtaiMsg> page = new HPage<DongtaiMsg>(pageNum);
+		MPage<DongtaiMsg> page = new MPage<DongtaiMsg>(pageNum);
 
-		dtService.findPageList(new DongtaiMsg(new Account()), false, page, "account");
+		dtService.findMsgPageList(page);
 
 		return page;
 	}

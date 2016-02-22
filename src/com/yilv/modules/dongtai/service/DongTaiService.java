@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.yilv.base.common.exception.ServiceException;
 import com.yilv.base.common.utils.DictDataUtil;
 import com.yilv.base.common.utils.FileUploadUtils;
-import com.yilv.base.common.utils.hibernatepage.HPage;
+import com.yilv.base.common.utils.page.mbatis.MPage;
 import com.yilv.base.modules.dongtai.entity.DongTai;
 import com.yilv.base.modules.dongtai.response.DongtaiMsg;
 import com.yilv.base.modules.dongtai.service.CDongTaiService;
@@ -60,8 +60,8 @@ public class DongTaiService extends CDongTaiService {
 
 	}
 
-	public void findPageList(DongtaiMsg dongtaiMsg, boolean cacheable, HPage<DongtaiMsg> page, String associationPaths) {
-		List<DongtaiMsg> list = dao.findPageList(dongtaiMsg, cacheable, page, associationPaths);
+	public void findMsgPageList(MPage<DongtaiMsg> page) {
+		List<DongtaiMsg> list = mDao.findMsgPageList(page);
 		List<String> ids = new ArrayList<String>();
 		for (DongtaiMsg dongtai : list) {
 			ids.add(dongtai.getId());
@@ -79,4 +79,5 @@ public class DongTaiService extends CDongTaiService {
 		}
 		page.setList(list);
 	}
+
 }

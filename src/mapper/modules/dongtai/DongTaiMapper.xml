@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yilv.base.modules.dongtai.dao.interfaces.IDongTaiDao">
+
+	<cache flushInterval="10000" readOnly="true" />
+
+	<sql id="dongtaiMsgColumns">
+		a.id AS 'id',
+		a.content AS 'content',
+		a.create_time AS 'create_time',
+		a.position AS 'position',
+		(select COUNT(*) FROM yi_dongtai_good dg WHERE dongtaiId = a.id) AS 'attitudesCount',
+		acc.nickname AS 'account.nickname',
+		acc.id AS 'account.id',
+		acc.img AS 'account.img',
+		a.create_by AS 'account'
+	</sql>
+
+	<select id="findMsgPageList" resultType="DongtaiMsg">
+		select
+		<include refid="dongtaiMsgColumns" />
+		from  yi_dongtai a 
+		INNER JOIN yi_account acc ON acc.id = a.create_by
+	</select>
+	
+</mapper>

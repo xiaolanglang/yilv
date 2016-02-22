@@ -8,5 +8,4 @@ import com.yilv.common.web.BaseController;
 @Controller
 @RequestMapping("file")
 public class YFileController extends BaseController {
-
 }

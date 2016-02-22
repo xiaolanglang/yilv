@@ -1,3 +1,20 @@
+//主要负责下拉加载数据
+$(function() {
+	var url = lt.getBasePath() + "dongtai/list";
+	$.post(url, null, function(data) {
+		var templete = $("#templete").html(), content = "";
+		console.log(data);
+		if (data != null) {
+			$.each(data.list, function(i, v) {
+				content += lt.nano(templete, v);
+			});
+		}
+		$("#wrapper").append(content);
+		$(".imglazy").lazyload();
+	});
+})
+
+// 主要负责点击图片效果，图片延迟加载
 $(function() {
 	var showImage = true;
 	var imageNum;
@@ -5,10 +22,9 @@ $(function() {
 		controlImageView();
 	}
 	var swiper = null;
-	document.getElementById("swiperView").addEventListener('touchmove',
-			function(event) {
-				event.preventDefault();
-			}, false);
+	document.getElementById("swiperView").addEventListener('touchmove', function(event) {
+		event.preventDefault();
+	}, false);
 
 	function controlImageView() {
 		if (showImage) {
@@ -42,29 +58,19 @@ $(function() {
 
 	$(".imglazy").lazyload();
 
-	$(".figure-list")
-			.on(
-					"click",
-					"li",
-					function(obj) {
-						var $this = $(this);
-						imageNum = $this.index(); // 点击了第几个
-						var content = "";
-						$this
-								.parent()
-								.find("li div")
-								.each(
-										function(i, v) {
-											var img = $(this).attr(
-													"data-original");
-											content += '<div class="swiper-slide" style="background-image: url(\''
-													+ img + '\')"></div>';
-										});
+	$(".figure-list").on("click", "li", function(obj) {
+		var $this = $(this);
+		imageNum = $this.index(); // 点击了第几个
+		var content = "";
+		$this.parent().find("li div").each(function(i, v) {
+			var img = $(this).attr("data-original");
+			content += '<div class="swiper-slide" style="background-image: url(\'' + img + '\')"></div>';
+		});
 
-						$(".swiper-wrapper").append(content);
-						jsInterface.imageFullPage("true");
-						showImage = true;
-					});
+		$(".swiper-wrapper").append(content);
+		jsInterface.imageFullPage("true");
+		showImage = true;
+	});
 
 	$("#swiperView").click(function() {
 		$("#swiperView").css("display", "none");

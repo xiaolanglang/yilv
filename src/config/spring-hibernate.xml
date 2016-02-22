@@ -74,10 +74,10 @@
 	</bean>
 
 	<!-- 对数据源进行事务管理 -->
-	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<bean id="htransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<!--启动注解用注解来管理事务 -->
-	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+	<tx:annotation-driven transaction-manager="htransactionManager" proxy-target-class="true" />
 
 </beans>

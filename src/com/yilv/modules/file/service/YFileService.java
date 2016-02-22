@@ -13,7 +13,7 @@ import com.yilv.base.modules.file.service.CYFileService;
 public class YFileService extends CYFileService {
 
 	public List<YFileMin> findFilesByEntityIds(List<String> ids) {
-		return dao.findFilesByEntityIds(ids);
+		return hDao.findFilesByEntityIds(ids);
 	}
 
 }
