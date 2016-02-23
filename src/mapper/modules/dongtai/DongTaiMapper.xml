@@ -9,11 +9,12 @@
 		a.content AS 'content',
 		a.create_time AS 'create_time',
 		a.position AS 'position',
-		(select COUNT(*) FROM yi_dongtai_good dg WHERE dongtaiId = a.id) AS 'attitudesCount',
+		(select COUNT(*) FROM yi_dongtai_good WHERE dongtaiId = a.id) AS 'attitudesCount',
+		(select COUNT(*) FROM yi_comment_dongtai WHERE dongtai_id = a.id) AS 'commentCount',
+		a.create_time AS 'createTime',
 		acc.nickname AS 'account.nickname',
 		acc.id AS 'account.id',
-		acc.img AS 'account.img',
-		a.create_by AS 'account'
+		acc.img AS 'account.img'
 	</sql>
 
 	<select id="findMsgPageList" resultType="DongtaiMsg">
