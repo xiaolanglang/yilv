@@ -62,6 +62,9 @@ public class DongTaiService extends CDongTaiService {
 
 	public void findMsgPageList(MPage<DongtaiMsg> page) {
 		List<DongtaiMsg> list = mDao.findMsgPageList(page);
+		if (list == null || list.size() == 0) {
+			return;
+		}
 		List<String> ids = new ArrayList<String>();
 		for (DongtaiMsg dongtai : list) {
 			ids.add(dongtai.getId());

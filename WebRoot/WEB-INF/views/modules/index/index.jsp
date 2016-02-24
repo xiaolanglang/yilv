@@ -265,4 +265,5 @@
 <%@include file="/WEB-INF/views/include/js.jsp"%>
 <script type="text/javascript" src="<%=mJs%>common/swiper/swiper.min.js"></script>
 <script type="text/javascript" src="<%=mJs%>modules/dongtai/index.js"></script>
+<script type="text/javascript" src="<%=mJs%>common/zepto.js"></script>
 </html>

@@ -6,8 +6,10 @@
 <head>
 	<title>Love Travel</title>
 	<%@include file="/WEB-INF/views/include/header.jsp"%>
+	<link rel="stylesheet" type="text/css" href="<%=mJs%>common/jBox/jBox.css"></script>
 	<link rel="stylesheet" type="text/css" href="<%=mCss%>/index/index.css">
-	<link rel="stylesheet" type="text/css" href="<%=mCss%>/index/detail.css"></head>
+	<link rel="stylesheet" type="text/css" href="<%=mCss%>/index/comment.css">
+</head>
 <body style="background-color: #F2F2F2">
 	<div class="row line-bottom content">
 		<div class="content1 row">
@@ -20,7 +22,9 @@
 		</div>
 		<div class="content2">
 			<p>
-				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
 			</p>
 		</div>
 		<div class="content3">
@@ -71,7 +75,8 @@
 		</div>
 		<div class="pinglun">
 			<p>
-				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。
 			</p>
 			<div class="child-pinglun">
 				<div class="row">
@@ -107,32 +112,11 @@
 					</span>
 				</div>
 			</a>
-			<a href="javascript:void(0)" class="right huifu">回复</a>
 		</div>
 		<div class="pinglun">
 			<p>
-				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
 			</p>
-			<div class="child-pinglun">
-				<div class="row">
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;是啊，很好玩
-				</div>
-				<div class="row">
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;下次跟我一起去玩吧
-				</div>
-				<div class="row">
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;好啊
-				</div>
-			</div>
 		</div>
 	</div>
 	<div class="row line-top pinglun-column">
@@ -147,45 +131,29 @@
 					</span>
 				</div>
 			</a>
-			<a href="javascript:void(0)" class="right huifu">回复</a>
 		</div>
 		<div class="pinglun">
 			<p>
-				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
+				今天和朋友去了巴厘岛，这里风景非常好，品尝了当地的特产，东西特别美味。猜猜我们下一站去哪儿。
 			</p>
-			<div class="child-pinglun">
-				<div class="row">
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;是啊，很好玩
-				</div>
-				<div class="row">
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;下次跟我一起去玩吧
-				</div>
-				<div class="row">
-					<a href="javascript:void(0)">游山玩水</a>
-					&nbsp;&nbsp;回复&nbsp;&nbsp;
-					<a href="javascript:void(0)">评论者</a>
-					&nbsp;&nbsp;:&nbsp;&nbsp;好啊
-				</div>
-			</div>
 		</div>
 	</div>
 	<div class="pre-bottom row line-top">暂无更多</div>
-	<div class="bottom row line-top">
-		<a href="javascript:void(0)" class="col-5">
+	<div class="bottom row line-top" id="bottom">
+		<a href="javascript:void(0)" class="col-5 good ${isGood=='1'?'active':'' }" data-id="${dongTai.id }">
 			<span class="text glyphicon glyphicon-thumbs-up icon"></span>
-			<span class="text">评论</span>
-		</a>
-		<a href="javascript:void(0)" class="col-5 line-left">
-			<span class="text icon-bubble2 icon"></span>
 			<span class="text">赞</span>
+		</a>
+		<a href="<%=basePath %>dongtai/comment/form?id=${dongTai.id }" class="col-5 line-left">
+			<span class="text icon-bubble2 icon"></span>
+			<span class="text">评论</span>
 		</a>
 	</div>
 </body>
 <%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=mJs%>common/jquery_1.11.js"></script>
+<script type="text/javascript" src="<%=mJs%>common/jBox/jBox.min.js"></script>
+<script type="text/javascript" src="<%=mJs%>common/zepto.js"></script>
+<script type="text/javascript" src="<%=mJs%>modules/common/lt.js"></script>
+<script type="text/javascript" src="<%=mJs%>modules/dongtai/comment.js"></script>
 </html>

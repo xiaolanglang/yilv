@@ -11,16 +11,11 @@ import com.yilv.common.web.BaseController;
 @Controller
 public class PageController extends BaseController {
 
-	// ------------动态以及评论部分
+	// ------------动态
 
 	@RequestMapping("")
 	public String index() {
 		return "index/index";
-	}
-
-	@RequestMapping("${travelPath}/dongtai/detail")
-	public String dongTaiDetail() {
-		return "index/detail";
 	}
 
 	// ------------资讯以及详细内容
