@@ -58,6 +58,7 @@
 		</div>
 	</c:if>
 </body>
-<%@include file="/WEB-INF/views/include/js.jsp"%>
+<script type="text/javascript" src="<%=mJs%>common/zepto.js"></script>
+<script type="text/javascript" src="<%=mJs%>modules/common/lt.js"></script>
 <script type="text/javascript" src="<%=mJs%>modules/mine/index/index.js"></script>
 </html>

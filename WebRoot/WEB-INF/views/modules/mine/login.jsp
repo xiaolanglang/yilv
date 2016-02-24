@@ -75,7 +75,7 @@
 		</div>
 	</div>
 </body>
-	<%@include file="/WEB-INF/views/include/js.jsp"%>
+	<script type="text/javascript" src="<%=mJs%>common/jquery_1.11.js"></script>
 	<script type="text/javascript" src="<%=mJs%>common/jBox/jBox.min.js"></script>
 	<script type="text/javascript" src="<%=mJs%>common/jquery.form.js"></script>
 	<script type="text/javascript" src="<%=mJs%>modules/mine/login/login.js"></script>
