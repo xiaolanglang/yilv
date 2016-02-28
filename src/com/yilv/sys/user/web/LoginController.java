@@ -91,4 +91,17 @@ public class LoginController extends BaseController {
 		return new Result(500, "该用户已经存在");
 	}
 
+	@RequestMapping(value = "${travelPath}/getuserinfo")
+	@ResponseBody
+	public Object getUserInfo() {
+		if (AccountUtils.getPrincipal() != null) {
+			Account account = AccountUtils.getAccount();
+			Account account2 = new Account(account.getId());
+			account2.setNickname(account.getNickname());
+			account2.setImg(account.getImg());
+			return account2;
+		}
+		return new Result(500, Result.FAILED);
+	}
+
 }
