@@ -22,8 +22,8 @@ public class DongTaiCommentController extends BaseController {
 
 	@RequestMapping("list")
 	@ResponseBody
-	private Object list(String id, String pageNum) {
-		HPage<DongTaiComment> page = new HPage<>(Integer.parseInt(pageNum));
+	private Object list(String id, Integer pageNum) {
+		HPage<DongTaiComment> page = new HPage<>(pageNum);
 		commentService.findPageList(new DongTaiComment(id), false, page, "user", "dongTai");
 		return page;
 	}
