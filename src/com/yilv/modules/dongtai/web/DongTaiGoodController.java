@@ -13,7 +13,7 @@ import com.yilv.common.web.BaseController;
 import com.yilv.modules.dongtai.service.DongTaiGoodService;
 
 @Controller
-@RequestMapping("${travelPath}/dongtaigood")
+@RequestMapping("${travelPath}/dongtai/good")
 public class DongTaiGoodController extends BaseController {
 	@Autowired
 	private DongTaiGoodService goodService;

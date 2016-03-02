@@ -25,11 +25,6 @@ public class DongTaiController extends BaseController {
 	@Autowired
 	private YFileService fileService;
 
-	@RequestMapping("local/page/dongtai/write")
-	public String writePage() {
-		return "dongtai/write";
-	}
-
 	@RequestMapping("save")
 	@ResponseBody
 	public Object save(DongTai dongTai, HttpServletRequest request) {
