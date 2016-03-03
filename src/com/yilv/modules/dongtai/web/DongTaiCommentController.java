@@ -22,9 +22,13 @@ public class DongTaiCommentController extends BaseController {
 
 	@RequestMapping("list")
 	@ResponseBody
-	private Object list(String id, Integer pageNum) {
+	private Object list(String dongtaiId, Integer pageNum) {
 		HPage<DongTaiComment> page = new HPage<>(pageNum);
-		commentService.findPageList(new DongTaiComment(id), false, page, "user", "dongTai");
+		DongTaiComment comment = new DongTaiComment();
+		DongTai dongTai = new DongTai();
+		dongTai.setId(dongtaiId);
+		comment.setDongTai(dongTai);
+		commentService.findPageList(comment, false, page, "user", "dongTai");
 		return page;
 	}
 
