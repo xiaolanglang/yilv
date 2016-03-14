@@ -9,6 +9,7 @@
 	<context:property-placeholder location="classpath:/config/privates/message.properties" />
 	
 	<bean id="myObjectMapper" class="com.yilv.base.common.entity.json.MyObjectMapper"></bean>
+	<!-- 注意这里的注解驱动一定要写，最简可以写成 <mvc:annotation-driven /> -->
 	<mvc:annotation-driven>
 		<mvc:message-converters>
 			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
