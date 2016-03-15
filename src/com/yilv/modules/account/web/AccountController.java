@@ -29,7 +29,7 @@ public class AccountController extends BaseController {
 	@ResponseBody
 	public Object findAccountList(Account account, Integer pageNum) {
 		HPage<Account> page = new HPage<>(pageNum);
-		accountService.findPageList(account, false, page);
+		accountService.findPageListByNickname(account, false, page);
 		return page;
 	}
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.yilv.base.common.utils.StringUtils;
+import com.yilv.base.common.utils.page.hibernate.HPage;
 import com.yilv.base.modules.account.entity.Account;
 import com.yilv.base.modules.account.service.CAccountService;
 
@@ -24,4 +25,7 @@ public class AccountService extends CAccountService {
 		return false;
 	}
 
+	public void findPageListByNickname(Account account, boolean cache, HPage<Account> page) {
+		hDao.findPageListByNickname(account, cache, page);
+	}
 }
