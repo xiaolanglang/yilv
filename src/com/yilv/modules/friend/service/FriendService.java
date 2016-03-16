@@ -20,10 +20,10 @@ public class FriendService extends CFriendService {
 		Friend friend = new Friend();
 		friend.setOwner(owner);
 		friend.setFriend(user);
-		friend.setMark("");
 		if (checkFriend(friend)) {
 			return new Result(500, "该用户已经是你的好友了");
 		}
+		friend.setMark("");
 		save(friend);
 		return new Result(200, "添加好友成功");
 	}

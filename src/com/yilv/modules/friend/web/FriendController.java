@@ -41,4 +41,21 @@ public class FriendController extends BaseController {
 		return list;
 	}
 
+	@ResponseBody
+	@RequestMapping("checkfriend")
+	public Object checkFriend(String friendId) {
+		Account account = new Account(AccountUtils.getAccount().getId());
+		if (friendId.equals(account.getId())) {
+			return "{\"type\":0}";// 自己
+		}
+		Friend friend = new Friend();
+		friend.setOwner(account);
+		friend.setFriend(new Account(friendId));
+		List<Friend> list = friendService.findList(friend, false, "owner", "friend");
+		if (list != null && list.size() > 0) {
+			return "{\"type\":1}";// 自己的好友
+		}
+
+		return "{\"type\":2}";// 不是好友
+	}
 }
