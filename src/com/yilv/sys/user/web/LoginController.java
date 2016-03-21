@@ -101,7 +101,7 @@ public class LoginController extends BaseController {
 			account2.setImg(account.getImg());
 			return account2;
 		}
-		return new Result(500, Result.FAILED);
+		return new Result(Result.FAILED, Result.FAILED_MSG);
 	}
 
 }
