@@ -27,7 +27,11 @@ public class LoginController extends BaseController {
 	@RequestMapping(value = "${travelPath}/loginsuccess")
 	@ResponseBody
 	public Object loginResult(HttpServletRequest request) {
-		return new Result(200, request.getHeader("Cookie"));
+		Account account = getAccount();
+		if (account != null) {
+			return account;
+		}
+		return new Result(Result.FAILED, Result.FAILED_MSG);
 	}
 
 	@RequestMapping(value = "${travelPath}/login", method = RequestMethod.GET)
@@ -41,10 +45,10 @@ public class LoginController extends BaseController {
 
 	@RequestMapping(value = "${travelPath}/login", method = RequestMethod.POST)
 	@ResponseBody
-	public Object loginFailed(Model model) {
-		Principal principal = AccountUtils.getPrincipal();
-		if (principal != null) {
-			return new Result(200, "success");
+	public Object loginFailed(HttpServletRequest request) {
+		Account account = getAccount();
+		if (account != null) {
+			return account;
 		}
 		return new Result(500, "用户名或者密码错误");
 	}
@@ -74,7 +78,8 @@ public class LoginController extends BaseController {
 
 		if (flag) {
 			String pw = account.getPassword();
-			String passWord = Encodes.getMD5Password(account.getUsername(), account.getPassword());
+			String passWord = Encodes.getMD5Password(account.getUsername(),
+					account.getPassword());
 			account.setPassword(passWord);
 			accountService.save(account);
 
@@ -91,17 +96,16 @@ public class LoginController extends BaseController {
 		return new Result(500, "该用户已经存在");
 	}
 
-	@RequestMapping(value = "${travelPath}/getuserinfo")
-	@ResponseBody
-	public Object getUserInfo() {
-		if (AccountUtils.getPrincipal() != null) {
+	private Account getAccount() {
+		Principal principal = AccountUtils.getPrincipal();
+		if (principal != null) {
 			Account account = AccountUtils.getAccount();
 			Account account2 = new Account(account.getId());
 			account2.setNickname(account.getNickname());
 			account2.setImg(account.getImg());
 			return account2;
 		}
-		return new Result(Result.FAILED, Result.FAILED_MSG);
+		return null;
 	}
 
 }
