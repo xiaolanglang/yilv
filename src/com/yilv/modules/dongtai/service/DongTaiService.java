@@ -19,6 +19,7 @@ import com.yilv.base.modules.dongtai.response.DongtaiMsg;
 import com.yilv.base.modules.dongtai.service.CDongTaiService;
 import com.yilv.base.modules.file.eitity.YFile;
 import com.yilv.base.modules.file.response.YFileMin;
+import com.yilv.common.util.QiNiuUtils;
 import com.yilv.modules.file.service.YFileService;
 
 @Service
@@ -35,11 +36,24 @@ public class DongTaiService extends CDongTaiService {
 
 		List<File> fileList = null;
 		try {
-			fileList = FileUploadUtils.upload(request, FileUploadUtils.getDefaultImgLocalUrl());
+			fileList = FileUploadUtils.upload(request,
+					FileUploadUtils.getDefaultImgLocalUrl());
+			if (fileList != null && fileList.size() > 0) {
+				for (File file : fileList) {
+					String url = FileUploadUtils.getDefaultImgUrl(file
+							.getName());
+					boolean f = QiNiuUtils.put(file,
+							QiNiuUtils.getFileName(url));
+					if (!f) {
+						throw new ServiceException("文件上传失败");
+					}
+				}
+			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ServiceException("文件上传失败");
 		}
-		if (fileList != null) {
+		if (fileList != null && fileList.size() > 0) {
 			String entityId = dongTai.getId();
 			for (File file : fileList) {
 				String url = null, localPath = null;

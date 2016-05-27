@@ -1,7 +1,5 @@
 package com.yilv.sys.user.web;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,7 +24,7 @@ public class LoginController extends BaseController {
 
 	@RequestMapping(value = "${travelPath}/loginsuccess")
 	@ResponseBody
-	public Object loginResult(HttpServletRequest request) {
+	public Object loginResult() {
 		Account account = getAccount();
 		if (account != null) {
 			return account;
@@ -45,7 +43,7 @@ public class LoginController extends BaseController {
 
 	@RequestMapping(value = "${travelPath}/login", method = RequestMethod.POST)
 	@ResponseBody
-	public Object loginFailed(HttpServletRequest request) {
+	public Object loginFailed() {
 		Account account = getAccount();
 		if (account != null) {
 			return account;
